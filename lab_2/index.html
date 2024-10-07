@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация на видеохостинг</title>
+</head>
+<body>
+
+    <h1>Форма регистрации на видеохостинг</h1>
+
+    <form action="#" method="post">
+
+        <p><label for="username">Логин:</label></p>
+        <input type="text" id="username" name="username" placeholder="Введите логин" required>
+
+        <p><label for="password">Пароль:</label></p>
+        <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+
+        <p><label for="gender">Пол:</label></p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Мужской</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Женский</label>
+
+        <p><label for="interests">Выберите ваши интересы:</label></p>
+        <select id="interests" name="interests[]" multiple size="4">
+            <option value="movies">Фильмы</option>
+            <option value="music">Музыка</option>
+            <option value="sports">Спорт</option>
+            <option value="education">Образование</option>
+        </select>
+
+        <p><label for="country">Страна:</label></p>
+        <select id="country" name="country">
+            <option value="ru">Россия</option>
+            <option value="us">США</option>
+            <option value="uk">Великобритания</option>
+            <option value="fr">Франция</option>
+        </select>
+
+        <p><label for="about">Коротко о себе:</label></p>
+        <textarea id="about" name="about" rows="4" cols="50" placeholder="Расскажите о себе"></textarea>
+
+        <p><label for="avatar">Загрузите вашу фотографию:</label></p>
+        <input type="file" id="avatar" name="avatar">
+
+        <p><input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">Принимаю <a href="#">правила сайта</a></label></p>
+
+        <p>
+            <input type="submit" value="Зарегистрироваться">
+            <input type="reset" value="Очистить форму">
+        </p>
+
+    </form>
+
+</body>
+</html>
