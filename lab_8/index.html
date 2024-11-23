@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛР8: Калькулятор и Часы</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор</h1>
+        <form id="calculator-form">
+            <div class="form-group">
+                <label for="operand1">
+                    Введите первое число/строку:
+                    <span class="tooltip" title="Введите либо число для математических операций, либо строку для конкатенации.">❓</span>
+                </label>
+                <input type="text" id="operand1" placeholder="Введите значение">
+            </div>
+            <div class="form-group">
+                <label for="operand2">
+                    Введите второе число/строку:
+                    <span class="tooltip" title="Введите либо число для математических операций, либо строку для конкатенации.">❓</span>
+                </label>
+                <input type="text" id="operand2" placeholder="Введите значение">
+            </div>
+            <div class="form-group">
+                <label for="operation">Выберите операцию:</label>
+                <select id="operation">
+                    <option value="add">Сложение</option>
+                    <option value="subtract">Вычитание</option>
+                    <option value="multiply">Умножение</option>
+                    <option value="divide">Деление</option>
+                    <option value="concat">Конкатенация строк</option>
+                </select>
+            </div>
+            <button type="button" id="calculate-button">Рассчитать</button>
+        </form>
+        <div id="result" class="result"></div>
+
+        <div class="clock" id="clock"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

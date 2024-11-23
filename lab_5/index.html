@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Видеохостинг MyVideoHost</title>
+    <style>
+        /* Основные стили для body и текста */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Контейнер таблицы на всю ширину */
+        .container {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Шапка и подвал сайта */
+        .header, .footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            width: 200px; 
+            height: 80px; 
+            object-fit: contain;
+        }
+
+        /* Навигационное меню */
+        .nav {
+            background-color: #EEEEEE;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .nav a {
+            color: #333;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            text-transform: uppercase; /* Трансформация текста */
+        }
+
+        .nav a:hover {
+            color: #4CAF50;
+        }
+
+        /* Стили для колонок */
+        .sidebar, .main-content {
+            vertical-align: top;
+            padding: 20px;
+        }
+
+        .sidebar {
+            background-color: #F0F0F0;
+            width: 200px;
+        }
+
+        /* Стили для списков */
+        .sidebar h3, .sidebar ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+            font-style: italic; /* Стиль шрифта */
+        }
+
+        .sidebar ul li a:hover {
+            color: #4CAF50;
+        }
+
+        /* Основной контент */
+        .main-content h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Псевдоэлемент для первого символа заголовка */
+        .main-content h2::first-letter {
+            font-size: 150%;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        /* Стили для таблицы видео */
+        .video-table {
+            width: 100%;
+            text-align: center;
+            border-spacing: 10px;
+        }
+
+        /* Обеспечиваем одинаковые размеры для видео */
+        .video-table td {
+            width: 50%;
+        }
+
+        .video-thumbnail {
+            border-radius: 8px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+
+        .video-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .video-link:hover {
+            color: #4CAF50;
+        }
+
+        /* Стили для формы подписки */
+        .form-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="email"] {
+            width: 80%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            background-image: url('images/email-icon.png'); /* Иконка для поля */
+            background-position: 5px center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45A049;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Основная таблица -->
+<table class="container" id="main-container">
+    <!-- Шапка сайта -->
+    <tr class="header">
+        <td colspan="3">
+            <img src="images/logo.png" alt="Логотип MyVideoHost" class="logo">
+            <p>Ваше любимое место для просмотра и обмена видео</p>
+        </td>
+    </tr>
+
+    <!-- Навигационное меню -->
+    <tr>
+        <td colspan="3" class="nav">
+            <a href="#">Главная</a>
+            <a href="#">В тренде</a>
+            <a href="#">Подписки</a>
+            <a href="#">Библиотека</a>
+            <a href="#">Загрузить</a>
+        </td>
+    </tr>
+
+    <!-- Основной контент -->
+    <tr>
+        <!-- Левая колонка -->
+        <td class="sidebar">
+            <h3>Категории</h3>
+            <ul>
+                <li><a href="https://music.yandex.ru">Музыка</a></li>
+                <li><a href="https://www.chess.com">Игры</a></li>
+                <li><a href="https://t.me/seeallochnaya">Новости</a></li>
+                <li><a href="https://www.hltv.org">Спорт</a></li>
+                <li><a href="https://stepik.org">Образование</a></li>
+            </ul>
+        </td>
+
+        <!-- Центральная колонка -->
+        <td class="main-content">
+            <h2>Рекомендуемые видео</h2>
+            <table class="video-table">
+                <!-- 6 Видео -->
+                <tr>
+                    <td>
+                        <img src="images/video1.jpg" class="video-thumbnail" alt="Обновление в шахматах"><br>
+                        <a href="#" class="video-link">Обновление в шахматах</a>
+                    </td>
+                    <td>
+                        <img src="images/video2.jpg" class="video-thumbnail" alt="Правила дорожного движения"><br>
+                        <a href="#" class="video-link">Правила дорожного движения</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/video3.jpg" class="video-thumbnail" alt="Как заработать первый геморой"><br>
+                        <a href="#" class="video-link">Как заработать первый геморой</a>
+                    </td>
+                    <td>
+                        <img src="images/video4.jpg" class="video-thumbnail" alt="Маша и медведь"><br>
+                        <a href="#" class="video-link">Маша и медведь</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/video5.jpg" class="video-thumbnail" alt="Методика делового общения"><br>
+                        <a href="#" class="video-link">Методика делового общения</a>
+                    </td>
+                    <td>
+                        <img src="images/video6.jpg" class="video-thumbnail" alt="Невербальные знаки"><br>
+                        <a href="#" class="video-link">Невербальные знаки</a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+        <!-- Правая колонка -->
+        <td class="sidebar">
+            <h3>Последние новости</h3>
+            <ul>
+                <li><a href="updates.html">Обновления платформы</a></li>
+                <li><a href="community-rules.html">Правила сообщества</a></li>
+                <li><a href="https://www.youtube.com">Будущие функции</a></li>
+            </ul>
+            <div class="form-container">
+                <h3>Подписка на новости</h3>
+                <form action="#" method="post">
+                    <input type="email" name="email" placeholder="Введите ваш email"><br><br>
+                    <input type="submit" value="Подписаться">
+                </form>
+            </div>
+        </td>
+    </tr>
+
+    <!-- Подвал сайта -->
+    <tr class="footer">
+        <td colspan="3">
+            <p>&copy; 2023 MyVideoHost. Все права защищены.</p>
+            <p><a href="#" style="color:white; text-decoration:none;">О нас</a> | 
+               <a href="#" style="color:white; text-decoration:none;">Контакты</a> | 
+               <a href="#" style="color:white; text-decoration:none;">Условия использования</a></p>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
